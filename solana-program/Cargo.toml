@@ -1,0 +1,16 @@
+[package]
+name = "luvdisc-registry"
+version = "0.1.0"
+edition = "2021"
+description = "LUVDISC on-chain build registry for deterministic LLVM IR anchoring"
+license = "MIT"
+
+[dependencies]
+solana-program = "1.18"
+borsh = "0.10"
+borsh-derive = "0.10"
+thiserror = "1.0"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "luvdisc_registry"

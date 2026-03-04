@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 350 30% 96%;
+    --foreground: 350 20% 20%;
+
+    --card: 350 30% 98%;
+    --card-foreground: 350 20% 20%;
+
+    --popover: 350 30% 98%;
+    --popover-foreground: 350 20% 20%;
+
+    --primary: 350 60% 72%;
+    --primary-foreground: 350 30% 98%;
+
+    --secondary: 350 25% 92%;
+    --secondary-foreground: 350 20% 30%;
+
+    --muted: 350 20% 93%;
+    --muted-foreground: 350 10% 50%;
+
+    --accent: 350 40% 88%;
+    --accent-foreground: 350 20% 25%;
+
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 350 20% 88%;
+    --input: 350 20% 88%;
+    --ring: 350 60% 72%;
+
+    --radius: 1rem;
+
+    --sidebar-background: 350 30% 96%;
+    --sidebar-foreground: 350 20% 20%;
+    --sidebar-primary: 350 60% 72%;
+    --sidebar-primary-foreground: 350 30% 98%;
+    --sidebar-accent: 350 25% 92%;
+    --sidebar-accent-foreground: 350 20% 25%;
+    --sidebar-border: 350 20% 88%;
+    --sidebar-ring: 350 60% 72%;
+
+    /* Custom tokens */
+    --success: 150 60% 45%;
+    --success-foreground: 0 0% 100%;
+    --warning: 40 90% 55%;
+    --warning-foreground: 0 0% 100%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .font-mono {
+    font-family: 'Space Mono', monospace;
+  }
+}
+
+@layer utilities {
+  .gradient-pink {
+    background: linear-gradient(
+      180deg,
+      hsl(350 30% 96%) 0%,
+      hsl(350 35% 93%) 50%,
+      hsl(350 30% 95%) 100%
+    );
+  }
+
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-sm border border-border rounded-2xl shadow-sm;
+  }
+
+  .text-hash {
+    font-family: 'Space Mono', monospace;
+    @apply text-sm text-muted-foreground break-all;
+  }
+}
+
+/* Solana wallet adapter overrides */
+.wallet-adapter-button {
+  background-color: hsl(350 60% 72%) !important;
+  border-radius: 1rem !important;
+  font-family: 'DM Sans', sans-serif !important;
+}
+
+.wallet-adapter-button:hover {
+  background-color: hsl(350 60% 65%) !important;
+}
+
+.wallet-adapter-modal-wrapper {
+  font-family: 'DM Sans', sans-serif !important;
+}
